@@ -1,0 +1,10 @@
+{
+  "id": "workflow",
+  "version": "0.1.0",
+  "contractVersion": "0.1",
+  "entry": "dist/index.js",
+  "displayName": "Workflow",
+  "description": "Workflow engine plugin — multi-step automation triggered by domain events (Phase 8)",
+  "dependsOn": [],
+  "required": false
+}
