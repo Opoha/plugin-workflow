@@ -34,6 +34,7 @@
     "build": "tsc -p tsconfig.build.json",
     "dev": "tsc -p tsconfig.build.json --watch",
     "test": "vitest run",
+    "workflow-smoke": "vitest run src/workflow-gate.smoke.test.ts src/index.test.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "engines": {
