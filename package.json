@@ -1,6 +1,6 @@
 {
   "name": "@opoha/plugin-workflow",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Workflow engine plugin — multi-step automation triggered by domain events (Phase 8)",
   "license": "MIT",
   "type": "module",
@@ -22,7 +22,7 @@
   ],
   "opoha": {
     "id": "workflow",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "contractVersion": "0.1",
     "entry": "dist/index.js",
     "displayName": "Workflow",
