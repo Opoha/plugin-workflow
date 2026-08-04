@@ -1,5 +1,11 @@
 # Workflow Plugin
 
+| | |
+| --- | --- |
+| npm | `@opoha/plugin-workflow` |
+| Repo | [Opoha/plugin-workflow](https://github.com/Opoha/plugin-workflow) |
+
+
 `@opoha/plugin-workflow` — multi-step workflow engine for Opoha Automation.
 
 ADR-0003 / contract `0.1`. Definitions and the step runner live in this plugin;
@@ -56,6 +62,14 @@ import { entities, migrations, MIGRATIONS_TABLE_NAME } from '@opoha/plugin-workf
 Tables: `plugin_workflow_definitions`, `plugin_workflow_runs`.
 Migrations table: `opoha_migrations_workflow`.
 
+## Install
+
+```bash
+pnpm add @opoha/plugin-workflow
+```
+
+Add the package to your app `opoha.config.json` `"plugins"` array (or set `OPOHA_PLUGINS` / `OPOHA_PLUGINS_PATH` for a local checkout).
+
 ## Load
 
 ```bash
@@ -75,3 +89,7 @@ pnpm test
 ```
 
 See Opoha Automation docs for workflow host integration.
+
+## License
+
+MIT © [Opoha](https://github.com/Opoha)
