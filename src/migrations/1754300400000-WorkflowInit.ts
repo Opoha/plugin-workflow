@@ -1,7 +1,7 @@
 import type { MigrationInterface, QueryRunner } from 'typeorm';
 
 /**
- * Initial workflow definition + run tables (Phase 8 B-02 / ADR-0005).
+ * Initial workflow definition + run tables (ADR-0005).
  * Table prefix: plugin id `workflow` → `plugin_workflow_*`.
  */
 export class WorkflowInit1754300400000 implements MigrationInterface {

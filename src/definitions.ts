@@ -1,5 +1,5 @@
 /**
- * Workflow definition model (Phase 8 B-02).
+ * Workflow definition model.
  * Declarative JSON steps; persistence via in-memory store or TypeORM bind.
  */
 

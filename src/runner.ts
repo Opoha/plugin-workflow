@@ -1,5 +1,5 @@
 /**
- * Workflow step runner (Phase 8 B-02).
+ * Workflow step runner.
  * Triggers on domain events (OrderPaid) and executes registered actions.
  */
 

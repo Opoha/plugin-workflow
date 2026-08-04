@@ -1,5 +1,5 @@
 /**
- * Public workflow action registration API (Phase 8 B-03).
+ * Public workflow action registration API.
  * Plugin authors register handlers here — no core patches required.
  */
 

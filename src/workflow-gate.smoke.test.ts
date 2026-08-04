@@ -1,9 +1,9 @@
 /**
- * Phase 8 B-04 — Workflow gate smoke.
+ * Workflow gate smoke.
  * `OrderPaid` (core `CoreEventName.OrderPaid` — see opoha-core event-catalog)
  * fires the plugin's registered listener, resolves the active workflow
  * definition for the trigger, and completes every defined step via the
- * public action registration API (B-03). No core patches required.
+ * public action registration API. No core patches required.
  */
 import { beforeEach, describe, expect, it } from 'vitest';
 
@@ -50,7 +50,7 @@ function mockPluginContext() {
   };
 }
 
-describe('Workflow gate smoke (B-04)', () => {
+describe('Workflow gate smoke', () => {
   beforeEach(() => {
     resetWorkflowActionsForTests();
     resetWorkflowDefinitionsForTests();

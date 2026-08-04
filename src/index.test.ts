@@ -58,7 +58,7 @@ describe('@opoha/plugin-workflow', () => {
     await plugin.boot?.(ctx);
   });
 
-  it('exports a definePlugin definition with the expected id (B-01)', () => {
+  it('exports a definePlugin definition with the expected id', () => {
     expect(plugin.id).toBe('workflow');
     expect(typeof plugin.boot).toBe('function');
   });
@@ -83,7 +83,7 @@ describe('@opoha/plugin-workflow', () => {
     );
   });
 
-  it('exposes plugin-owned TypeORM entities and migrations (B-02)', () => {
+  it('exposes plugin-owned TypeORM entities and migrations', () => {
     expect(PLUGIN_ID).toBe('workflow');
     expect(MIGRATIONS_TABLE_NAME).toBe('opoha_migrations_workflow');
     expect(entities).toHaveLength(2);
@@ -106,7 +106,7 @@ describe('@opoha/plugin-workflow', () => {
     expect(queries.some((q) => q.includes('DROP TABLE'))).toBe(true);
   });
 
-  describe('action registration API (B-03)', () => {
+  describe('action registration API', () => {
     it('registers a custom action without core patches', async () => {
       const seen: string[] = [];
       registerWorkflowAction('custom.tag', async (ctx) => {
@@ -161,7 +161,7 @@ describe('@opoha/plugin-workflow', () => {
     });
   });
 
-  describe('runner (B-02)', () => {
+  describe('runner', () => {
     it('fails when an action is missing', async () => {
       await upsertWorkflowDefinition({
         code: 'broken',
