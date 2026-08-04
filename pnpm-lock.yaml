@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@opoha/plugin-sdk':
-        specifier: file:/Users/svacmai/Developer/opoha/opoha-plugin-sdk
-        version: file:../opoha-plugin-sdk
+        specifier: ^1.0.0
+        version: 1.0.0
       reflect-metadata:
         specifier: ^0.2.2
         version: 0.2.2
@@ -200,8 +200,8 @@ packages:
     os: [linux]
     libc: [glibc]
 
-  '@opoha/plugin-sdk@file:../opoha-plugin-sdk':
-    resolution: {directory: ../opoha-plugin-sdk, type: directory}
+  '@opoha/plugin-sdk@1.0.0':
+    resolution: {integrity: sha512-Howy/G18jrUbLPx+VjkKCUEApV8rleapev5fUFBEI+cuCewdnuPbTuq+te1BL0qIL9xleta/bKxePNZr0hHvtg==}
     engines: {node: '>=20'}
 
   '@pkgjs/parseargs@0.11.0':
@@ -1079,7 +1079,7 @@ snapshots:
   '@napi-rs/lzma-linux-x64-gnu@1.5.1':
     optional: true
 
-  '@opoha/plugin-sdk@file:../opoha-plugin-sdk':
+  '@opoha/plugin-sdk@1.0.0':
     dependencies:
       zod: 4.4.3
 

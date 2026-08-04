@@ -3,3 +3,6 @@ packages:
 
 allowBuilds:
   esbuild: true
+
+minimumReleaseAgeExclude:
+  - '@opoha/plugin-sdk@1.0.0'
