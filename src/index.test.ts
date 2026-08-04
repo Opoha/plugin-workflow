@@ -19,6 +19,7 @@ import plugin, {
   upsertWorkflowDefinition,
 } from './index.js';
 import { WorkflowInit1754300400000 } from './migrations/1754300400000-WorkflowInit.js';
+import { createStubPluginContext } from '@opoha/plugin-sdk';
 
 function mockPluginContext() {
   const providers: Array<{ token: string }> = [];
@@ -28,8 +29,7 @@ function mockPluginContext() {
     providers,
     graphql,
     listeners,
-    ctx: {
-      pluginId: 'workflow',
+    ctx: createStubPluginContext('workflow', {
       registerProvider: (input: { token: string }) => {
         providers.push({ token: input.token });
       },
@@ -53,7 +53,7 @@ function mockPluginContext() {
       registerSearchProvider: () => undefined,
       registerFXProvider: () => undefined,
       registerScheduledJob: () => undefined,
-    },
+    }),
   };
 }
 

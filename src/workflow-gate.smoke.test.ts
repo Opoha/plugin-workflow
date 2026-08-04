@@ -20,6 +20,7 @@ import {
   upsertWorkflowDefinition,
 } from './index.js';
 import plugin from './index.js';
+import { createStubPluginContext } from '@opoha/plugin-sdk';
 
 function mockPluginContext() {
   const listeners = new Map<
@@ -28,8 +29,7 @@ function mockPluginContext() {
   >();
   return {
     listeners,
-    ctx: {
-      pluginId: 'workflow',
+    ctx: createStubPluginContext('workflow', {
       registerProvider: () => undefined,
       registerGraphQL: () => undefined,
       registerListener: (
@@ -49,7 +49,7 @@ function mockPluginContext() {
       registerSearchProvider: () => undefined,
       registerFXProvider: () => undefined,
       registerScheduledJob: () => undefined,
-    },
+    }),
   };
 }
 
