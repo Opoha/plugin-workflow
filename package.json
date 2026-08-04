@@ -41,7 +41,7 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@opoha/plugin-sdk": "file:/Users/svacmai/Developer/opoha/opoha-plugin-sdk",
+    "@opoha/plugin-sdk": "^1.0.0",
     "reflect-metadata": "^0.2.2",
     "typeorm": "0.3.27"
   },
