@@ -9,12 +9,12 @@ plugin-owned tables (`plugin_workflow_*`).
 
 ## What it registers
 
-| Token / API | Role |
-|-------------|------|
-| `workflow.ready` | Lifecycle readiness stub |
-| `workflow.engine` | Definitions, runner, action registry, run list |
-| Listener | `OrderPaid` → active workflows |
-| GraphQL | `workflowDefinitions`, `upsertWorkflowDefinition`, `workflowRuns` |
+| Token / API       | Role                                                              |
+| ----------------- | ----------------------------------------------------------------- |
+| `workflow.ready`  | Lifecycle readiness stub                                          |
+| `workflow.engine` | Definitions, runner, action registry, run list                    |
+| Listener          | `OrderPaid` → active workflows                                    |
+| GraphQL           | `workflowDefinitions`, `upsertWorkflowDefinition`, `workflowRuns` |
 
 ## Public action API (B-03)
 
@@ -34,10 +34,7 @@ Or via the host-bound provider token `workflow.engine.registerAction`.
 ## Define a workflow
 
 ```ts
-import {
-  ORDER_PAID_EVENT,
-  upsertWorkflowDefinition,
-} from '@opoha/plugin-workflow';
+import { ORDER_PAID_EVENT, upsertWorkflowDefinition } from '@opoha/plugin-workflow';
 
 await upsertWorkflowDefinition({
   code: 'fulfill-on-paid',
@@ -53,11 +50,7 @@ await upsertWorkflowDefinition({
 ## TypeORM (plugin-owned)
 
 ```ts
-import {
-  entities,
-  migrations,
-  MIGRATIONS_TABLE_NAME,
-} from '@opoha/plugin-workflow/database';
+import { entities, migrations, MIGRATIONS_TABLE_NAME } from '@opoha/plugin-workflow/database';
 ```
 
 Tables: `plugin_workflow_definitions`, `plugin_workflow_runs`.

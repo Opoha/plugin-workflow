@@ -23,10 +23,7 @@ import plugin from './index.js';
 import { createStubPluginContext } from '@opoha/plugin-sdk';
 
 function mockPluginContext() {
-  const listeners = new Map<
-    string,
-    (event: unknown) => void | Promise<void>
-  >();
+  const listeners = new Map<string, (event: unknown) => void | Promise<void>>();
   return {
     listeners,
     ctx: createStubPluginContext('workflow', {
@@ -77,11 +74,7 @@ describe('Workflow gate smoke (B-04)', () => {
       emailed.push(String((actionCtx.data as { orderId?: string }).orderId));
     });
     expect(listWorkflowActions().map((a) => a.name)).toEqual(
-      expect.arrayContaining([
-        'workflow.log',
-        'customer.tag',
-        'notification.send',
-      ]),
+      expect.arrayContaining(['workflow.log', 'customer.tag', 'notification.send']),
     );
 
     await upsertWorkflowDefinition({

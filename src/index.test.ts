@@ -1,11 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import {
-  MIGRATIONS_TABLE_NAME,
-  PLUGIN_ID,
-  entities,
-  migrations,
-} from './database.js';
+import { MIGRATIONS_TABLE_NAME, PLUGIN_ID, entities, migrations } from './database.js';
 import plugin, {
   ORDER_PAID_EVENT,
   getWorkflowAction,
@@ -36,11 +31,7 @@ function mockPluginContext() {
       registerGraphQL: (input: { name: string; kind: string }) => {
         graphql.push({ name: input.name, kind: input.kind });
       },
-      registerListener: (
-        eventName: string,
-        _handler: unknown,
-        options?: { id?: string },
-      ) => {
+      registerListener: (eventName: string, _handler: unknown, options?: { id?: string }) => {
         listeners.push({ eventName, id: options?.id });
       },
       registerAdmin: () => undefined,
@@ -88,11 +79,7 @@ describe('@opoha/plugin-workflow', () => {
       ]),
     );
     expect(graphql.map((g) => g.name)).toEqual(
-      expect.arrayContaining([
-        'workflowDefinitions',
-        'upsertWorkflowDefinition',
-        'workflowRuns',
-      ]),
+      expect.arrayContaining(['workflowDefinitions', 'upsertWorkflowDefinition', 'workflowRuns']),
     );
   });
 
@@ -113,9 +100,7 @@ describe('@opoha/plugin-workflow', () => {
     };
     const migration = new WorkflowInit1754300400000();
     await migration.up(runner as never);
-    expect(queries.some((q) => q.includes('plugin_workflow_definitions'))).toBe(
-      true,
-    );
+    expect(queries.some((q) => q.includes('plugin_workflow_definitions'))).toBe(true);
     expect(queries.some((q) => q.includes('plugin_workflow_runs'))).toBe(true);
     await migration.down(runner as never);
     expect(queries.some((q) => q.includes('DROP TABLE'))).toBe(true);

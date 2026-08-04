@@ -54,8 +54,6 @@ export class WorkflowInit1754300400000 implements MigrationInterface {
 
   public async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query(`DROP TABLE IF EXISTS "plugin_workflow_runs"`);
-    await queryRunner.query(
-      `DROP TABLE IF EXISTS "plugin_workflow_definitions"`,
-    );
+    await queryRunner.query(`DROP TABLE IF EXISTS "plugin_workflow_definitions"`);
   }
 }

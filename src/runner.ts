@@ -10,11 +10,7 @@ import {
   type WorkflowStep,
 } from './definitions.js';
 
-export type WorkflowRunStatus =
-  | 'completed'
-  | 'failed'
-  | 'waiting_delay'
-  | 'waiting_approval';
+export type WorkflowRunStatus = 'completed' | 'failed' | 'waiting_delay' | 'waiting_approval';
 
 export type WorkflowStepResult = {
   index: number;
@@ -154,9 +150,7 @@ export async function runWorkflow(
 /**
  * Find active workflows for the event and run each to completion (or wait stub).
  */
-export async function handleTriggerEvent(
-  event: DomainEventLike,
-): Promise<WorkflowRun[]> {
+export async function handleTriggerEvent(event: DomainEventLike): Promise<WorkflowRun[]> {
   const defs = await listActiveWorkflowsForEvent(event.eventName);
   const results: WorkflowRun[] = [];
   for (const def of defs) {

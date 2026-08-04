@@ -23,10 +23,7 @@ export type WorkflowApprovalStep = {
   label: string;
 };
 
-export type WorkflowStep =
-  | WorkflowActionStep
-  | WorkflowDelayStep
-  | WorkflowApprovalStep;
+export type WorkflowStep = WorkflowActionStep | WorkflowDelayStep | WorkflowApprovalStep;
 
 export type WorkflowDefinition = {
   id: string;
@@ -84,9 +81,7 @@ function memoryStore(): WorkflowDefinitionsStore {
       return definitions.get(code) ?? null;
     },
     async listActiveByTrigger(eventName) {
-      return [...definitions.values()].filter(
-        (d) => d.isActive && d.triggerEvent === eventName,
-      );
+      return [...definitions.values()].filter((d) => d.isActive && d.triggerEvent === eventName);
     },
     async list() {
       return [...definitions.values()];
@@ -97,9 +92,7 @@ function memoryStore(): WorkflowDefinitionsStore {
   };
 }
 
-export function bindWorkflowDefinitionsStore(
-  store: WorkflowDefinitionsStore | null,
-): void {
+export function bindWorkflowDefinitionsStore(store: WorkflowDefinitionsStore | null): void {
   boundStore = store;
 }
 

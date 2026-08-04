@@ -20,9 +20,7 @@ export type WorkflowActionContext = {
   context: Record<string, unknown>;
 };
 
-export type WorkflowActionHandler = (
-  ctx: WorkflowActionContext,
-) => void | Promise<void>;
+export type WorkflowActionHandler = (ctx: WorkflowActionContext) => void | Promise<void>;
 
 export type WorkflowActionRegistration = {
   name: string;
@@ -51,9 +49,7 @@ export function registerWorkflowAction(
   });
 }
 
-export function getWorkflowAction(
-  name: string,
-): WorkflowActionRegistration | undefined {
+export function getWorkflowAction(name: string): WorkflowActionRegistration | undefined {
   return actions.get(name);
 }
 

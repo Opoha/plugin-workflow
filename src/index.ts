@@ -60,12 +60,7 @@ export {
   type WorkflowStepResult,
 };
 
-export {
-  MIGRATIONS_TABLE_NAME,
-  PLUGIN_ID,
-  entities,
-  migrations,
-} from './database.js';
+export { MIGRATIONS_TABLE_NAME, PLUGIN_ID, entities, migrations } from './database.js';
 
 function ensureBuiltinActions(): void {
   if (getWorkflowAction('workflow.log')) {
@@ -133,8 +128,7 @@ export default definePlugin({
       name: 'workflowDefinitions',
       kind: 'query',
       descriptor: {
-        resolve: async (): Promise<WorkflowDefinition[]> =>
-          listWorkflowDefinitions(),
+        resolve: async (): Promise<WorkflowDefinition[]> => listWorkflowDefinitions(),
       },
     });
     ctx.registerGraphQL({
@@ -144,8 +138,7 @@ export default definePlugin({
         resolve: async (
           _parent: unknown,
           args: { input: UpsertWorkflowDefinitionInput },
-        ): Promise<WorkflowDefinition> =>
-          upsertWorkflowDefinition(args.input),
+        ): Promise<WorkflowDefinition> => upsertWorkflowDefinition(args.input),
       },
     });
     ctx.registerGraphQL({
@@ -173,11 +166,7 @@ export default definePlugin({
           permission: 'plugin:workflow:configure',
         },
       ],
-      permissions: [
-        'plugin:workflow:read',
-        'plugin:workflow:configure',
-        'plugin:workflow:manage',
-      ],
+      permissions: ['plugin:workflow:read', 'plugin:workflow:configure', 'plugin:workflow:manage'],
     });
   },
 
