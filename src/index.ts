@@ -77,7 +77,7 @@ function ensureBuiltinActions(): void {
 }
 
 /**
- * Workflow engine — multi-step automation triggered by domain events (Phase 8 B).
+ * Workflow engine — multi-step automation triggered by domain events.
  * Definitions + runner live in this plugin; core provides event bus + jobs hooks.
  */
 export default definePlugin({
